@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loose Thread — Websites for people who need to be seen</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3efe6;--ink:#14110f;--lime:#c6ff3d;--vio:#7a5cff;--pink:#ff6fb5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent;line-height:1.4}
+.wrap{max-width:520px;margin:0 auto;position:relative;padding:0 22px 0 40px}
+.wrap::before{content:"";position:absolute;left:18px;top:0;bottom:0;border-left:3px dashed var(--ink);opacity:.35}
+a{color:inherit}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-weight:800;font-size:1.1rem}
+.pill{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;padding:10px 16px;border-radius:99px;font-size:.9rem;font-weight:600}
+.hero{padding:20px 0 30px}
+.tag{display:inline-block;background:var(--lime);border:2px solid var(--ink);border-radius:99px;padding:5px 12px;font-size:.8rem;font-weight:600;transform:rotate(-2deg)}
+h1{font-size:clamp(3rem,17vw,5.4rem);line-height:.88;letter-spacing:-.05em;font-weight:800;margin:16px 0}
+h1 em{font-style:normal;background:var(--vio);color:#fff;padding:0 .12em;border-radius:12px;display:inline-block;transform:rotate(-2deg)}
+.lead{font-size:1.15rem;max-width:30ch;margin-bottom:20px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;font-size:1rem;padding:14px 22px;border-radius:99px;border:2px solid var(--ink);cursor:pointer;text-decoration:none;display:inline-block;color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.lime{background:var(--lime)}.white{background:#fff}
+svg.th{width:100%;height:120px;margin-top:10px;overflow:visible}
+svg.th path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:dr 3.2s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.mq{margin:0 -22px 0 -40px;background:var(--ink);color:var(--lime);overflow:hidden;white-space:nowrap;padding:12px 0;font-weight:800;font-size:1.1rem;transform:rotate(-1.5deg)}
+.mq div{display:inline-block;animation:mq 18s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:54px 0 4px;position:relative}
+section::before{content:"";position:absolute;left:-29px;top:62px;width:14px;height:14px;background:var(--lime);border:3px solid var(--ink);border-radius:50%}
+h2{font-size:clamp(2rem,9vw,2.8rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin-bottom:8px}
+.sub{opacity:.7;margin-bottom:20px}
+.card{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:18px;margin-bottom:14px;box-shadow:5px 5px 0 var(--ink)}
+.card h3{font-size:1.25rem;margin-bottom:6px}
+.card p{font-size:.95rem;opacity:.8}
+.card ul{margin:10px 0 0 18px;font-size:.92rem}
+.c1{background:#e9e2ff}.c2{background:#e8ffb8}.c3{background:#ffd6ea}.c4{background:#d4f2ff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stats .card{margin:0;padding:14px;box-shadow:3px 3px 0 var(--ink)}
+.stats b{display:block;font-size:1.05rem}
+.stats span{font-size:.85rem;opacity:.75}
+.work a{text-decoration:none;display:block}
+.work small{display:inline-block;background:var(--ink);color:var(--lime);border-radius:99px;padding:3px 10px;font-size:.72rem;margin-bottom:8px}
+.step{display:flex;gap:14px;margin-bottom:16px}
+.step b{flex:none;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:1.1rem}
+details{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{margin-top:8px;font-size:.95rem;opacity:.8}
+form{display:grid;gap:14px;background:var(--ink);color:var(--paper);border-radius:26px;padding:20px}
+label{font-size:.85rem;opacity:.85;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;color:var(--paper);background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.25);border-radius:14px;padding:13px 14px;width:100%;outline:none}
+select option{color:#000}
+input:focus,select:focus,textarea:focus{border-color:var(--lime)}
+textarea{min-height:92px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{opacity:1}
+.chips input{display:none}
+.chips span{display:inline-block;padding:10px 14px;border-radius:99px;border:1.5px solid rgba(255,255,255,.3);font-size:.95rem}
+.chips input:checked+span{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600}
+.fb{border:0;color:var(--ink);box-shadow:none;width:100%;text-align:center}
+.err{color:#ff9a9a;font-size:.9rem;min-height:1.1em}
+.note{font-size:.8rem;opacity:.6}
+.contact{display:grid;gap:10px}
+footer{padding:50px 0 110px;font-size:.85rem;opacity:.6}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9;background:#25d366;color:#fff;text-decoration:none;font-weight:700;border:2px solid var(--ink);border-radius:99px;padding:13px 18px;box-shadow:3px 3px 0 var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:.6s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.mq div{animation:none}svg.th path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+/* dark theme */
+:root{--paper:#0b0912;--ink:#f5f3ff;color-scheme:dark}
+.pill{background:var(--lime);color:#0b0912}
+.tag{color:#0b0912;border-color:#0b0912}
+.btn{border-color:var(--lime);box-shadow:4px 4px 0 var(--vio)}
+.btn:active{box-shadow:1px 1px 0 var(--vio)}
+.btn.lime{color:#0b0912}
+.btn.white{background:#1b1730;color:#f5f3ff;border-color:#4a3f85}
+.mq{background:var(--lime);color:#0b0912}
+.card,details{background:#161228;border-color:#352d5c}
+.card{box-shadow:5px 5px 0 var(--vio)}
+.stats .card{box-shadow:3px 3px 0 var(--vio)}
+.c1{background:#1d1840}.c2{background:#1a2410}.c3{background:#2a1426}.c4{background:#0f2430}
+.step b{background:var(--lime);color:#0b0912}
+small{background:var(--lime)!important;color:#0b0912!important}
+form{background:#161228;color:var(--ink);border:2px solid #352d5c}
+input,select,textarea{color:var(--ink)}
+.chips input:checked+span{color:#0b0912}
+.fb.lime{color:#0b0912}
+.wa{border-color:#0b0912;box-shadow:3px 3px 0 var(--vio)}
+.lk{word-break:break-all;color:var(--lime);font-weight:600}
+</style>
+<meta name="theme-color" content="#0b0912">
+</head>
+<body>
+<div class="wrap">
+
+<div class="top"><span>Loose Thread 🧵</span><a class="pill" href="#apply">Apply</a></div>
+
+<header class="hero">
+  <span class="tag">Mobile-first web studio</span>
+  <h1>Your business, <em>online</em> and unmissable.</h1>
+  <p class="lead">We design and build websites, stores and AI apps that look great on a phone, because that’s where your customers are.</p>
+  <div class="cta">
+    <a class="btn lime" href="#apply">Get my website</a>
+    <a class="btn white" href="https://wa.me/2348035774599?text=Hi%20Loose%20Thread%2C%20I%20need%20a%20website.">Chat on WhatsApp</a>
+  </div>
+  <svg class="th" viewBox="0 0 400 120" aria-hidden="true"><path d="M0 20 C60 20 70 100 130 90 S200 10 260 40 S330 110 360 70 C380 45 340 30 335 55 C332 72 360 78 372 66"/></svg>
+</header>
+
+<div class="mq"><div>WEBSITES ✦ ONLINE STORES ✦ PORTFOLIOS ✦ AI CHAT APPS ✦ BOOKING PAGES ✦ LANDING PAGES ✦ WEBSITES ✦ ONLINE STORES ✦ PORTFOLIOS ✦ AI CHAT APPS ✦ BOOKING PAGES ✦ LANDING PAGES ✦ </div></div>
+
+<section class="rv">
+  <h2>What we build</h2>
+  <p class="sub">Pick what fits, or tell us your own idea.</p>
+  <div class="card c1"><h3>Business websites</h3><p>A clear, professional home for your business so people trust you before they call.</p><ul><li>Home, services, about, contact</li><li>WhatsApp and call buttons</li><li>Fast on phones</li></ul></div>
+  <div class="card c2"><h3>Online stores</h3><p>Show your products or services, take orders, and make buying simple.</p><ul><li>Product pages and categories</li><li>Order or checkout flow</li><li>Message-to-order on WhatsApp</li></ul></div>
+  <div class="card c3"><h3>Portfolios</h3><p>For creators, students and freelancers who want their work to stand out.</p><ul><li>Projects and case studies</li><li>About you and your skills</li><li>Easy contact form</li></ul></div>
+  <div class="card c4"><h3>AI chat apps</h3><p>A smart assistant with its own personality, built for your brand or idea.</p><ul><li>Custom look and voice</li><li>Built on the Claude API</li><li>Works in the phone browser</li></ul></div>
+</section>
+
+<section class="rv">
+  <h2>Why Loose Thread</h2>
+  <div class="stats">
+    <div class="card"><b>Phone first</b><span>Designed on a phone, for phones</span></div>
+    <div class="card"><b>Clear price</b><span>Agreed before we start</span></div>
+    <div class="card"><b>Real chat</b><span>Talk to us on WhatsApp</span></div>
+    <div class="card"><b>Made unique</b><span>No cookie-cutter templates</span></div>
+  </div>
+</section>
+
+<section class="rv work">
+  <h2>Things we’ve built</h2>
+  <p class="sub">A few of our own projects.</p>
+  <a class="card" href="https://spotless-horizon.vercel.app" target="_blank" rel="noopener"><small>LIVE SITE</small><h3>Spotless Horizon</h3><p>A laundry and cleaning services website for a business in Birnin Kebbi. Tap to open it.</p></a>
+  <div class="card"><small style="background:var(--ink);color:var(--lime);border-radius:99px;padding:3px 10px;font-size:.72rem">AI APP</small><h3 style="margin-top:8px">Echo</h3><p>An AI chat companion with its own personality and a clean, minimal look.</p></div>
+  <div class="card"><small style="background:var(--ink);color:var(--lime);border-radius:99px;padding:3px 10px;font-size:.72rem">AI APP</small><h3 style="margin-top:8px">Nova</h3><p>An AI chatbot with a dark glass interface.</p></div>
+  <div class="card"><small style="background:var(--ink);color:var(--lime);border-radius:99px;padding:3px 10px;font-size:.72rem">STOREFRONT</small><h3 style="margin-top:8px">Game top-up store</h3><p>A top-up storefront design with a demo checkout flow.</p></div>
+  <div class="card"><small style="background:var(--ink);color:var(--lime);border-radius:99px;padding:3px 10px;font-size:.72rem">TOOL</small><h3 style="margin-top:8px">CodeFeed</h3><p>A news reader styled like a code editor.</p></div>
+</section>
+
+<section class="rv">
+  <h2>How it works</h2>
+  <div class="step"><b>1</b><div><strong>You apply</strong><br>Fill the form below. It takes about two minutes.</div></div>
+  <div class="step"><b>2</b><div><strong>We talk</strong><br>We message you on WhatsApp or email, ask questions and agree on price and timeline.</div></div>
+  <div class="step"><b>3</b><div><strong>We design</strong><br>You see the design and tell us what to change.</div></div>
+  <div class="step"><b>4</b><div><strong>We launch</strong><br>Your site goes live and we help you share it.</div></div>
+</section>
+
+<section class="rv">
+  <h2>Questions</h2>
+  <details><summary>How long does a website take?</summary><p>Simple sites can be quick and bigger ones take longer. We give you a clear timeline once we know what you need.</p></details>
+  <details><summary>Do I need a domain name?</summary><p>It helps your business look professional. We can guide you on getting one, or start without it.</p></details>
+  <details><summary>How much does it cost?</summary><p>It depends on what you need. Tell us your budget in the form and we’ll agree a price with you before any work begins.</p></details>
+  <details><summary>Can I change things later?</summary><p>Yes. Just message us and we’ll update your site.</p></details>
+  <details><summary>I don’t know what I want yet.</summary><p>No problem. Apply with your rough idea and we’ll help you shape it.</p></details>
+</section>
+
+<section class="rv" id="apply">
+  <h2>Apply for your website</h2>
+  <p class="sub">Fill this in and send it straight to us.</p>
+  <form id="f" novalidate>
+    <label>Your name<input id="name" autocomplete="name" placeholder="Full name"></label>
+    <label>Business or project name<input id="biz" placeholder="e.g. Your business name"></label>
+    <label>What do you need?
+      <div class="chips">
+        <label><input type="radio" name="type" value="Business website" checked><span>Business site</span></label>
+        <label><input type="radio" name="type" value="Online store"><span>Online store</span></label>
+        <label><input type="radio" name="type" value="Portfolio"><span>Portfolio</span></label>
+        <label><input type="radio" name="type" value="AI chat app"><span>AI chat app</span></label>
+        <label><input type="radio" name="type" value="Something else"><span>Other</span></label>
+      </div>
+    </label>
+    <label>Tell us about it<textarea id="desc" placeholder="What does your business do? What should the site have?"></textarea></label>
+    <label>Budget
+      <select id="budget"><option>Not sure yet</option><option>Under ₦50,000</option><option>₦50,000 – ₦150,000</option><option>₦150,000 – ₦300,000</option><option>₦300,000+</option></select>
+    </label>
+    <label>When do you need it?
+      <select id="when"><option>As soon as possible</option><option>Within 2 weeks</option><option>Within a month</option><option>No rush</option></select>
+    </label>
+    <label>Your WhatsApp number<input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+234 ..."></label>
+    <label>Your email (optional)<input id="mail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+    <label>Websites you like (optional)<input id="ref" placeholder="Links or names"></label>
+    <div class="err" id="err"></div>
+    <button type="button" class="btn lime fb" id="bw">Send on WhatsApp</button>
+    <button type="button" class="btn white fb" id="be">Send by email</button>
+    <div class="note">This opens WhatsApp or your email app with your request ready. Tap send there to finish.</div>
+  </form>
+</section>
+
+<section class="rv">
+  <h2>Or reach us directly</h2>
+  <div class="contact">
+    <a class="btn lime" href="https://wa.me/2348035774599?text=Hi%20Loose%20Thread%2C%20I%20need%20a%20website.">WhatsApp: 0803 577 4599</a>
+    <a class="btn white" href="tel:+2348035774599">Call: 0803 577 4599</a>
+    <a class="btn white" href="mailto:josephbreakthru@gmail.com">josephbreakthru@gmail.com</a>
+  </div>
+  <div class="card" style="margin-top:16px;text-align:center">
+    <h3>Ready to get started?</h3>
+    <p>Tell us what you have in mind. Tap below to apply directly through WhatsApp.</p>
+    <a class="btn lime" style="display:block;margin-top:14px" href="https://wa.me/2348035774599?text=Hi%20Loose%20Thread%2C%20I%27d%20like%20to%20apply%20for%20a%20website.">Apply</a>
+  </div>
+</section>
+
+<footer>© Loose Thread. Built on a phone, made for phones.</footer>
+</div>
+
+<a class="wa" href="https://wa.me/2348035774599?text=Hi%20Loose%20Thread%2C%20I%20need%20a%20website.">WhatsApp</a>
+
+<script>
+(function(){
+var WA="2348035774599",EMAIL="josephbreakthru@gmail.com";
+var $=function(i){return document.getElementById(i)};
+function msg(){
+  var t=document.querySelector('input[name=type]:checked').value;
+  return ["Hi Loose Thread, I need a website.","","Name: "+$('name').value.trim(),"Business/project: "+($('biz').value.trim()||"-"),"Type: "+t,"Details: "+($('desc').value.trim()||"-"),"Budget: "+$('budget').value,"Timeline: "+$('when').value,"WhatsApp: "+$('phone').value.trim(),"Email: "+($('mail').value.trim()||"-"),"Likes: "+($('ref').value.trim()||"-")].join("\n");
+}
+function ok(){
+  if(!$('name').value.trim()||!$('phone').value.trim()){$('err').textContent='Please add your name and WhatsApp number.';return false}
+  $('err').textContent='';return true;
+}
+$('bw').onclick=function(){if(ok())location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg())};
+$('be').onclick=function(){if(ok())location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Website request from '+$('name').value.trim())+'&body='+encodeURIComponent(msg())};
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+}else els.forEach(function(e){e.classList.add('in')});
+})();
+</script>
+</body>
+</html>
